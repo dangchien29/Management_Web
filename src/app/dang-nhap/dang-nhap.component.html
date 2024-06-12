@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="title"><span>Đăng nhập</span></div>
+    <form (ngSubmit)="login()">
+      <label for="">Tài khoản</label>
+      <div class="row">
+        <!-- <i class="fas fa-user"></i> -->
+        <input type="text" placeholder="Gmail" [(ngModel)]="gmail" name="gmail" required>
+      </div>
+      <label for="">Mật khẩu</label>
+      <div class="row">
+        <!-- <i class="fas fa-lock"></i> -->
+        <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+      </div>
+      <div class="pass"><a href="#">Quên mật khẩu?</a></div>
+      <div class="row button">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

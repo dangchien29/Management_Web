@@ -1,0 +1,33 @@
+/* task-list.component.css */
+
+.task-container {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #f8f9fa;
+    margin-bottom: 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.task-body {
+    margin-top: 0.5rem;
+}
+
+.task-details {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-details div {
+    flex: 1;
+}
+
+.task-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.task-actions button {
+    margin-left: 0.5rem;
+}

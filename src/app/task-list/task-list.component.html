@@ -1,0 +1,85 @@
+<div class="container">
+  <nav id="thanhmenu" class="bg-primary" style="height: 60px;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" routerLink="/trang_chu">Quản Lý Dự Án Fpoly</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" routerLink="/trang_chu">Bảng điều khiển</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Quản lý dự án
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" routerLink="/du_an/them">Thêm dự án</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/du_an">Danh sách dự án</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Quản lý nhân viên
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" routerLink="/nhan_vien/them">Thêm nhân viên</a>
+                </li>
+                <li><a class="dropdown-item" href="#" routerLink="/nhan_vien">Danh sách nhân viên</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Quản lý Task
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" routerLink="/task/them">Thêm Task</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/task">Danh sách Task</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </nav>
+  <nav id="breadcrumb" class="bg-warning-subtle" style="height: 35px; padding-top: 5px; padding-left: 30px;">
+    Trang chủ > {{title2}}
+  </nav>
+  <h3 class="bg-warning mt-0 p-2 fs-4"> DANH SÁCH TASK</h3>
+  <div class="mt-2" *ngFor="let task of list_task">
+    <div class="task-container">
+      <div class="task-header">
+        <b>{{ task.ten_task }}</b>
+      </div>
+      <div class="task-body">
+        {{ task.mo_ta }}
+      </div>
+      <div class="task-details">
+        <div>
+          Priority: {{ task.priority }}<br>
+          Status: {{ task.status }}
+        </div>
+        <div>
+          Nhân viên: {{ task.nhan_vien_id }}<br>
+          Dự án: {{ task.du_an_id }}
+        </div>
+      </div>
+      <div class="task-actions">
+        <button class="btn btn-primary" (click)="editTA(task.id)">Sửa</button>
+        <button class="btn btn-danger" (click)="deleteTA(task.id)">Xóa</button>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,100 @@
+<div class="container">
+    <nav id="thanhmenu" class="bg-primary" style="height: 60px;">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" routerLink="/trang_chu">Quản Lý Dự Án Fpoly</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" routerLink="/trang_chu">Bảng điều khiển</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Quản lý dự án
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" routerLink="/du_an/them">Thêm dự án</a></li>
+                                <li><a class="dropdown-item" href="#" routerLink="/du_an">Danh sách dự án</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Quản lý nhân viên
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" routerLink="/nhan_vien/them">Thêm nhân viên</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" routerLink="/nhan_vien">Danh sách nhân viên</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Quản lý Task
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" routerLink="/task/them">Thêm Task</a></li>
+                                <li><a class="dropdown-item" href="#" routerLink="/task">Danh sách Task</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </nav>
+    <nav id="breadcrumb" class="bg-warning-subtle" style="height: 35px; padding-top: 5px; padding-left: 30px;">
+        Trang chủ > {{title2}}
+    </nav>
+    <form #frm1="ngForm" (ngSubmit)="xuly()" class="col-10 m-auto border border-primary px-3 mt-2">
+        <div class="mb-3">
+            Họ
+            <input type="text" name="ho" [(ngModel)]="data.ho" class="form-control">
+        </div>
+        <div class="mb-3">
+            Tên
+            <input type="text" name="ten" [(ngModel)]="data.ten" class="form-control">
+        </div>
+        <div class="mb-3">
+            Ngày sinh
+            <input type="date" name="ngay_sinh" class="form-control" [ngModel]="data.ngay_sinh|date:'yyyy-MM-dd'"
+                (ngModelChange)="data.ngay_sinh=$event">
+        </div>
+        <div class="mb-3">
+            Gmail
+            <input type="email" name="gmail" [(ngModel)]="data.gmail" class="form-control">
+        </div>
+        <div class="mb-3">
+            Password
+            <input type="password" name="password" [(ngModel)]="data.password" class="form-control">
+        </div>
+        <div class="mb-3">
+            Giới tính
+            <br>
+            <input type="radio" name="phai" [value]="1" [(ngModel)]="data.phai">Nam <br>
+            <input type="radio" name="phai" [value]="0" [(ngModel)]="data.phai">Nữ
+        </div>
+        <div class="mb-3">
+            Khu vực
+            <select name="khu_vuc" [(ngModel)]="data.khu_vuc" class="form-control">
+                <option value="Bắc">Bắc</option>
+                <option value="Trung">Trung</option>
+                <option value="Nam">Nam</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Sửa nhân viên</button>
+        </div>
+    </form>
+</div>
