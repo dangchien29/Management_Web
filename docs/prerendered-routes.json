@@ -1,0 +1,13 @@
+{
+  "routes": [
+    "/",
+    "/du_an",
+    "/du_an/them",
+    "/home",
+    "/nhan_vien",
+    "/nhan_vien/them",
+    "/task",
+    "/task/them",
+    "/trang_chu"
+  ]
+}
